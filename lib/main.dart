@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
         //
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 10, 56, 94)),
         useMaterial3: true,
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
@@ -77,53 +77,67 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
-      backgroundColor: const Color(0xFF212121),
+      backgroundColor: Colors.white,
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset(
-              "https://wwwblueberrynu.cdn.triggerfish.cloud/uploads/2019/12/studera-plugga-undiknas-bali-denpasar-logo.jpg", 
-            height: 150,),
-            SizedBox(height: 20,),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Column(
-                children: [
-                  TextField(
-                    style: TextStyle(color: Colors.white),
-                    decoration: InputDecoration(
-                      prefixIcon: Icon(Icons.email, color: Colors.amber),
-                      hintText: 'Email',
-                      hintStyle: TextStyle(color: Colors.grey),
-                      filled: true,
-                      fillColor: Colors.grey[850],
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(25),
-                        borderSide: BorderSide.none,
-                      ),
-                    ),
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Image.network('https://d22gwcrfo2de51.cloudfront.net/wp-content/uploads/2020/08/logo_Universitas-Pendidikan-Nasional-thumb.png',
+              width: 350,
+              height: 350,
+              ),
+              SizedBox(height: 20, width: 50),
+              TextField(
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Email',
+                  prefixIcon: Icon(Icons.email, color: Colors.amber),
+                ),
+              ),
+              SizedBox(height: 15, width: 50,),
+              TextField(
+                obscureText: true,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Password',
+                  prefixIcon: Icon(Icons.key, color: Colors.amber),
+                ),
+              ),
+              SizedBox(height: 20, width: 50,),
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
+
+                  },
+                  child: Text('Login'),
+                  style: ElevatedButton.styleFrom(
+                    padding: EdgeInsets.symmetric(vertical: 15),
                   ),
-                  SizedBox(height: 15),
-                  TextField(
-                    style: TextStyle(color: Colors.white),
-                    decoration: InputDecoration(
-                      prefixIcon: Icon(Icons.key, color: Colors.amber),
-                      hintText: 'Password',
-                      hintStyle: TextStyle(color: Colors.grey),
-                      filled: true,
-                      fillColor: Colors.grey[850],
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(25),
-                        borderSide: BorderSide.none,
-                      ),
-                    ),
+                ),
+              ),
+              SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  TextButton(
+                    onPressed: (){
+                    }, 
+                    child: Text('Forget Password'),
+                  ),
+                  Text("|"),
+                  TextButton(
+                    onPressed: () {
+                    }, 
+                    child: Text('Register Here'),
                   ),
                 ],
-              ),
-            ),
-          ],
-        ),
+              )
+            ],
+          ),
+          ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
