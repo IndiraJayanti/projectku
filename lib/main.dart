@@ -26,7 +26,7 @@ class ResponsiveLayout extends StatefulWidget { // Kelas widget Stateful untuk l
 }
 
 class _ResponsiveLayoutState extends State<ResponsiveLayout> {
-  String _content = 'Biodata'; // Konten default yang akan ditampilkan adalah 'Biodata'.
+  String _content = 'Home'; // Konten default yang akan ditampilkan adalah 'Biodata'.
   bool _isSidebarVisible = true; // Menyimpan status visibilitas sidebar.
 
   void _updateContent(String content) { // Fungsi untuk memperbarui konten yang ditampilkan.
@@ -231,9 +231,9 @@ class BiodataContent extends StatelessWidget { // Kelas untuk konten Biodata.
             Column( // Menggunakan Column untuk menata elemen secara vertikal.
               crossAxisAlignment: CrossAxisAlignment.start, // Posisi teks di awal.
               children: [
-                Text('- Pemrograman Flutter', style: TextStyle(fontSize: 16)), // Teks kemampuan 1.
-                Text('- ', style: TextStyle(fontSize: 16)), // Teks kemampuan 2 (belum diisi).
-                Text('- ', style: TextStyle(fontSize: 16)), // Teks kemampuan 3 (belum diisi).
+                Text('- Saya memahami dan bisa menggunakan Flutter untuk pengembangan aplikasi mobile.', style: TextStyle(fontSize: 16)), // Teks kemampuan 1.
+                Text('- Saya memiliki pengetahuan dasar dalam HTML untuk membangun struktur halaman web.', style: TextStyle(fontSize: 16)), // Teks kemampuan 2 (belum diisi).
+                Text('- Saya juga menguasai dasar-dasar Python untuk pemrograman dan pengolahan data.', style: TextStyle(fontSize: 16)), // Teks kemampuan 3 (belum diisi).
               ],
             ),
           ],
